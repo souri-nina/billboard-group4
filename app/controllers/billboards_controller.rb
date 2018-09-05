@@ -48,7 +48,7 @@ class BillboardsController < ApplicationController
     end
 
     def billboard_params
-      params.require(:billboard).permit(:title :artist_name :song)
+      params.require(:billboard).permit(:title, :artist_name, :song)
     end
 
 end
