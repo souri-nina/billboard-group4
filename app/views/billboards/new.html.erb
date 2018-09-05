@@ -1,2 +1,13 @@
-<h1>Billboards#new</h1>
-<p>Find me in app/views/billboards/new.html.erb</p>
+<h1>Create a new billboard</h1>
+<%= form_for [@billboard] do |f| %>
+  <%= f.label :title %>
+  <%= f.text_area :title, required: true %>
+  <br />
+  <%= f.label :artist_name %>
+  <%= f.text_field :artist_name, required: true %>
+  <br />
+  <%= f.label :song_name %>
+  <%= f.text_field :song_name, required: true %>
+
+  <%= f.submit %>
+<% end %>

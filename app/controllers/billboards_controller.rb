@@ -19,7 +19,7 @@ class BillboardsController < ApplicationController
   end
 
   def create
-    @billboard = Billoard.new(billboard_params)
+    @billboard = Billboard.new(billboard_params)
     
     if @billboard.save
       redirect_to billboards_path
@@ -43,12 +43,12 @@ class BillboardsController < ApplicationController
   end
 
   private
-     def set_billboard
+    def set_billboard
       @billboard = Billboard.find(params[:id])
     end
 
     def billboard_params
-      params.require(:billboard).permit(:title :artist_name :song)
+      params.require(:billboard).permit(:title, :artist_name, :song_name)
     end
 
 end
