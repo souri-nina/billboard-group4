@@ -5,11 +5,14 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     
-    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= stylesheet_link_tag    'application' %>
     <%= javascript_include_tag 'application' %>
+    <%= stylesheet_link_tag    'bootstrap' %>
+    <%= javascript_include_tag 'bootstrap' %>
+
   </head>
 
-  <body>
+  <body class="container">
     <%= yield %>
   </body>
 </html>

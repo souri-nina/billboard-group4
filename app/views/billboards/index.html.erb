@@ -1,7 +1,15 @@
-<h1>Billboard Hot 100</h1>
-<%= link_to 'Create a new billboard', new_billboard_path %>
-<ul>
+<div class="my-4 text-center text-lg-left">
+  <h1>Billboard Hot 100</h1>
+  <%= link_to 'Create a new billboard', new_billboard_path %>
+</div>
+
+<div class="row text-center text-lg-left">
+
   <% @billboards.each do |billboard| %>
-    <li><%= link_to billboard.title, billboard %></li>
+    <div class="col-lg-3 col-md-4 col-xs-6 card">
+      <%= link_to billboard.title, billboard, :class => "d-block mb-4 h-15" %>
+        <img class="img-fluid img-thumbnail" src="http://placehold.it/400x300" alt="">
+    </div>
   <% end %>
-</ul>
+
+</div>
