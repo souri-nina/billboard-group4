@@ -1,2 +1,6 @@
-<h1>Artists#show</h1>
-<p>Find me in app/views/artists/show.html.erb</p>
+<h1><% @artist.artist_name %></h1>
+<p><%= @artist.song_name %></p>
+<%= link_to 'Add A Song', new_billboard_artist_path(@billboard) %>
+<%= link_to 'Edit A Song', edit_billboard_artist_path(@billboard, @artist) %>
+<%= link_to 'Remove A Song', billboard_artists_path, method: :delete %>
+<%= link_to 'Back To Billboard', billboard_path %>

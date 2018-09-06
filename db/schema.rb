@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_05_213113) do
+ActiveRecord::Schema.define(version: 2018_09_06_144059) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 2018_09_05_213113) do
     t.bigint "billboard_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "artist_name"
     t.index ["billboard_id"], name: "index_artists_on_billboard_id"
   end
 

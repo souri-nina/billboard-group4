@@ -1,5 +1,7 @@
-<h1><% @artist.name %></h1>
-<p><%= @artist.song_name %></p>
-<%= link_to 'Add A Song', new_billboard_artist_path(@billboard) %>
-<%= link_to 'Remove A Song', artists_song_path, method: :delete %>
-<%= link_to 'Back To Billboard', billboard_path %>
+<h1>Click an artist to view more of their music</h1>
+<p><%= link_to 'Add a new artist', new_billboard_artist_path(@billboard) %></p>
+<ul>
+  <% @artists.each do |artist| %>
+    <li><%= link_to artist.name, [@billboard, artist] %></li>
+  <% end %>
+</ul>
