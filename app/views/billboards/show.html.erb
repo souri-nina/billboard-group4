@@ -1,7 +1,7 @@
 <h1><%= @billboard.title %></h1>
 <h2>Click an artist to view more of their music</h2>
 <hr />
-<ul class="row">
+<ul>
   <% @artists.each do |artist| %>
     <li>
       <%= link_to artist.artist_name, [@billboard, artist] %>   
@@ -12,6 +12,10 @@
   <% end %>
 </ul>
 <hr />
+<%= link_to 'Artist', new_billboard_artist_path(@artist) %>
+<br />
+<%= link_to 'New Song', new_billboard_artist_path(@artist) %>
+<br />
 <%= link_to 'Edit Billboard', edit_billboard_path(@billboard) %>
 <br />
 <%= link_to 'Delete Billboard', @billboard, method: :delete %>

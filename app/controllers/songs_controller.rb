@@ -1,5 +1,6 @@
 class SongsController < ApplicationController
-  
+  before_action :set_artist
+
   def index
     @song = Song.new
   end
@@ -10,6 +11,18 @@ class SongsController < ApplicationController
       redirect_to sub_artist_path(@artist.sub_id, @artist)
     else
       render :new
+    end
+  end
+
+  def edit
+    render partial: "form"
+  end
+
+  def update
+    if @song.update
+      redirect_to sub_artist_path(@artist.sub_id, @artist)
+    else
+      redirect_to :edit
     end
   end
 
