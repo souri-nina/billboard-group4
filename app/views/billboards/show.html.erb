@@ -1,7 +1,7 @@
 <h1><%= @billboard.title %></h1>
 <h2>Click an artist to view more of their music</h2>
 <hr />
-<ul>
+<ul class="row">
   <% @artists.each do |artist| %>
     <li>
       <%= link_to artist.artist_name, [@billboard, artist] %>   
