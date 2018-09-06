@@ -1,6 +1,6 @@
 class BillboardsController < ApplicationController
   before_action :set_billboard, only: [:show, :update, :edit, :destroy]
-  before_action :set_artist
+  before_action :set_artist, only: [:show]
 
   def index
     @billboards = Billboard.all
@@ -51,9 +51,8 @@ class BillboardsController < ApplicationController
     end
 
     def set_artist
-      @artist = Artist.find(params[:id])
+      @artist = Artist.new
     end
-
 
     def billboard_params
       params.require(:billboard).permit(:title, :artist_name, :song_name)

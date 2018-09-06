@@ -1,8 +1,7 @@
 class ArtistsController < ApplicationController
   before_action :set_billboard
   # before_action :set_song
-  before_action :set_artist, only: [:show, :edit, :update, :destroy]  
-  
+  before_action :set_artist, only: [:show, :edit, :update, :destroy]
 
   def index
     @artists = @billboard.artists
@@ -52,7 +51,9 @@ class ArtistsController < ApplicationController
       @artist = Artist.find(params[:id])
     end
 
-    
+    # def set_song
+    #   @song = Song
+    # end  
 
     def artist_params
       params.require(:artist).permit(:artist_name, :song_name)

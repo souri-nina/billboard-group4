@@ -1,23 +1,30 @@
-<h1><%= @billboard.title %></h1>
+<h1><b><%= @billboard.title %></b></h1>
 <h2>Click an artist to view more of their music</h2>
 <hr />
-<ul>
-  <% @artists.each do |artist| %>
-    <li>
-      <%= link_to artist.artist_name, [@billboard, artist] %>   
-  <% end %>    
-      <% @artists.each do |artist| %>
-      <%= link_to artist.song_name, [@billboard, artist] %> 
-    </li>
-  <% end %>
-</ul>
+<div class="container-fluid">
+  <%= link_to 'New Artist', new_billboard_artist_path(@billboard) %>
+  <%= link_to 'Edit Billboard', edit_billboard_path(@billboard) %> |
+  <%= link_to 'Delete Billboard', @billboard, method: :delete %> |
+  <%= link_to 'New Artist', billboard_artist_path(@billboard) %>
+</div>
 <hr />
-<%= link_to 'Artist', new_billboard_artist_path(@artist) %>
-<br />
-<%= link_to 'New Song', new_billboard_artist_path(@artist) %>
-<br />
-<%= link_to 'Edit Billboard', edit_billboard_path(@billboard) %>
-<br />
-<%= link_to 'Delete Billboard', @billboard, method: :delete %>
-<br />
+<div class="container">
+  <div class="row">
+    <div class="col-6"><h3><b>Artist</b></h3></div>
+    <div class="col-6"><h3><b>Song</b></h3></div>
+  </div>
+  <div class="row">
+    <% @artists.each do |artist| %>
+      <%= link_to artist.artist_name, [@billboard, artist], :class=> "col-6" %>   
+    <% end %>
+      <% @artists.each do |artist| %>
+      <%= link_to artist.song_name, [@billboard, artist], :class=> "col-6" %> 
+    <% end %>
+  </div>
+</div>
+<hr />
+
 <%= link_to 'Back', billboards_path %>
+
+
+
