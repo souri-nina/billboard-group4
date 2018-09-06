@@ -2,6 +2,6 @@
 <p><%= link_to 'Add a new artist', new_billboard_artist_path(@billboard) %></p>
 <ul>
   <% @artists.each do |artist| %>
-    <li><%= link_to artist.name, [@billboard, artist] %></li>
+    <li><%= link_to artist.artist_name, [@billboard, artist] %></li>
   <% end %>
 </ul>
