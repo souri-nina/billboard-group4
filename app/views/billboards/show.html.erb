@@ -1,10 +1,19 @@
 <h1><%= @billboard.title %></h1>
+<h2>Click an artist to view more of their music</h2>
 <hr />
-<%= link_to 'View Top Songs', billboard_artists_path(@billboard) %>
-<br />
+<ul>
+  <% @artists.each do |artist| %>
+    <li>
+      <%= link_to artist.artist_name, [@billboard, artist] %>   
+  <% end %>    
+      <% @artists.each do |artist| %>
+      <%= link_to artist.song_name, [@billboard, artist] %> 
+    </li>
+  <% end %>
+</ul>
+<hr />
 <%= link_to 'Edit Billboard', edit_billboard_path(@billboard) %>
 <br />
 <%= link_to 'Delete Billboard', @billboard, method: :delete %>
 <br />
 <%= link_to 'Back', billboards_path %>
-
