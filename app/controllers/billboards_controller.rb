@@ -7,15 +7,17 @@ class BillboardsController < ApplicationController
   end
 
   def show
-
+    @artists = @billboard.artists
 
   end
 
   def edit
+    render partial: "form"
   end
 
   def new
     @billboard = Billboard.new
+    render partial: "form"
   end
 
   def create

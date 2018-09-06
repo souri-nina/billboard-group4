@@ -53,7 +53,7 @@ class ArtistsController < ApplicationController
     end
 
     def artist_params
-      params.require(:artist).permit(:song_name)
+      params.require(:artist).permit(:artist_name, :song_name)
     end
 end
 
