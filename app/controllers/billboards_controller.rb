@@ -12,6 +12,7 @@ class BillboardsController < ApplicationController
   end
 
   def edit
+    
     render partial: "form"
   end
 
