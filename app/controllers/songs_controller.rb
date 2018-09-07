@@ -14,20 +14,18 @@ class SongsController < ApplicationController
     end
   end
 
-  def edit
-    render partial: "form"
-  end
+  # def destroy
+  #   song = @artist.songs.find(params[:id])
+  #   song.destroy
+  #   redirect_to billboards_path
 
-  def update
-    if @song.update
-      redirect_to sub_artist_path(@artist.sub_id, @artist)
-    else
-      redirect_to :edit
-    end
-  end
-
+  # end
 
   private
+
+    # def set_song
+    #   @song = artist_songs_path(params[:artist_id])
+    # end
     def set_artist
       @artist = artist.find(params[:artist_id])
     end
