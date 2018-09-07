@@ -2,10 +2,9 @@
 <h2>Click an artist to view more of their music</h2>
 <hr />
 <div class="container-fluid">
-  <%= link_to 'New Artist', new_billboard_artist_path(@billboard) %>
+  <%= link_to 'New Artist', new_billboard_artist_path(@billboard) %> |
   <%= link_to 'Edit Billboard', edit_billboard_path(@billboard) %> |
-  <%= link_to 'Delete Billboard', @billboard, method: :delete %> |
-  <%= link_to 'New Artist', billboard_artist_path(@billboard) %>
+  <%= link_to 'Delete Billboard', @billboard, method: :delete %> 
 </div>
 <hr />
 <div class="container">
